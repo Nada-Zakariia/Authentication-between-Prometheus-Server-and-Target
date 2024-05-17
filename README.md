@@ -49,8 +49,8 @@ Implementing Encryption and Authentication using self-signed Certificate.
   ```
 ### - Verify the metrics locally  
   ```sh
-  http://localhost:9100/metrics 
-  https://localhost:9100/metrics
+  curl https://localhost:9100/metrics 
+  curl -k https://localhost:9100/metrics
   ```
 ### - Copy the node_exporter.crt to prometheus server
   ```sh
