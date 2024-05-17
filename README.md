@@ -27,7 +27,7 @@ Implementing Encryption and Authentication using self-signed Certificate.
    ```sh         
    sudo chown -R node_exporter:node_exporter /etc/node_exporter
    ```
-### - Update the systemd service of node_exporter
+### - Update the systemd service of node_exporter (/etc/systemd/system/node_exporter.service)
   ```ini
   [Unit]
   Description=Prometheus Node Exporter
