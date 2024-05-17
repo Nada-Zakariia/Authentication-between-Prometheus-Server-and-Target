@@ -23,10 +23,25 @@ Implementing Encryption and Authentication using self-signed Certificate.
             cert_file: node_exporter.crt
             key_file: node_exporter.key
   ```
-### - Set the ownership of the crt and key files for node_exporter
+### - Set the ownership of the node_exporter directory 
    ```sh         
    sudo chown -R node_exporter:node_exporter /etc/node_exporter
    ```
+### - Update the systemd service of node_exporter
+  ```ini
+  [Unit]
+  Description=Prometheus Node Exporter
+  Wants=network-online.target
+  After=network-online.target
+  [Service]
+  User=node_exporter
+  Group=node_exporter
+  Type=simple
+  ExecStart=/usr/local/bin/node_exporter --web.config.file="/etc/node_exporter/targetconfig.yml"
+  [Install]
+  WantedBy=multi-user.target
+  ```
+
 ### - Reload the daemon and restart the node_exporter
   ```sh
   sudo systemctl daemon-reload
