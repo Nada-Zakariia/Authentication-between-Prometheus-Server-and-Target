@@ -58,7 +58,7 @@ Implementing Encryption and Authentication using self-signed Certificate.
   ```
 ### - Change the ownership of node_expoter.crt file to prometheus 
   ```sh
-  sudo chown prometheus:prometheus /etc/promtheus/node_exporter.crt
+  sudo chown prometheus:prometheus /etc/prometheus/node_exporter.crt
   ```
 ### - Update the prometheus configuration file with the certificate of target
   ```yml
